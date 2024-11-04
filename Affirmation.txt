@@ -1,0 +1,80 @@
+package com.example.affirmation
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Card
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.example.affirmation.ui.theme.AffirmationTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+
+                AffirmationsApp()
+            }
+        }
+    }
+
+    data class Affirmation(val imageResId: Int, val text: String)
+
+    @Composable
+    fun AffirmationsApp() {
+        val affirmations_images = listOf(
+            Affirmation(R.drawable.eleven, "Road"),
+            Affirmation(R.drawable.twelve, "Beach"),
+            Affirmation(R.drawable.thirteen, "leaves"),
+            Affirmation(R.drawable.fourteen, "Green"),
+            Affirmation(R.drawable.fifteen, "river"),
+            Affirmation(R.drawable.sixteen, "flowers"),
+            Affirmation(R.drawable.seventeen, "Nightview"),
+            Affirmation(R.drawable.eighteen, "Boats"),
+            Affirmation(R.drawable.nineteen, "maldives"),
+            Affirmation(R.drawable.twenty, "Himalayas")
+        )
+
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.padding(horizontal = 16.dp)
+        ) {
+            items(affirmations_images) { index ->
+                AffirmationCard(index)
+            }
+        }
+    }
+
+
+@Composable
+fun AffirmationCard(affirmation: Affirmation){
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column {
+            Image(painter = painterResource(id = affirmation.imageResId),
+                contentDescription = null,
+                modifier = Modifier.fillMaxWidth().height(200.dp), contentScale = ContentScale.Crop
+            )
+            Text(
+                text=affirmation.text,
+                modifier = Modifier.padding(16.dp)
+            )
+        }
+    }
+}
