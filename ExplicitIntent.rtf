@@ -1,212 +1,113 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2757
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;\f2\fswiss\fcharset0 Helvetica-Bold;
+MainActivity.kt
+
+package com.example.explicitintent
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.example.explicitintent.ui.theme.ExplicitintentTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            SimpleExpilicit()
+        }
+    }
 }
-{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh17840\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
 
-\f0\fs32 \cf0 \cb2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 MainActivity.kt\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 package com.example.explicitintent\cb1 \
-\
-\cb2 import android.content.Intent\cb1 \
-\cb2 import android.os.Bundle\cb1 \
-\cb2 import androidx.activity.ComponentActivity\cb1 \
-\cb2 import androidx.activity.compose.setContent\cb1 \
-\cb2 import androidx.activity.enableEdgeToEdge\cb1 \
-\cb2 import androidx.compose.foundation.layout.Arrangement\cb1 \
-\cb2 import androidx.compose.foundation.layout.Column\cb1 \
-\cb2 import androidx.compose.foundation.layout.Spacer\cb1 \
-\cb2 import androidx.compose.foundation.layout.fillMaxSize\cb1 \
-\cb2 import androidx.compose.foundation.layout.height\cb1 \
-\cb2 import androidx.compose.foundation.layout.padding\cb1 \
-\cb2 import androidx.compose.material3.Button\cb1 \
-\cb2 import androidx.compose.material3.OutlinedTextField\cb1 \
-\cb2 import androidx.compose.material3.Scaffold\cb1 \
-\cb2 import androidx.compose.material3.Text\cb1 \
-\cb2 import androidx.compose.runtime.Composable\cb1 \
-\cb2 import androidx.compose.runtime.getValue\cb1 \
-\cb2 import androidx.compose.runtime.mutableStateOf\cb1 \
-\cb2 import androidx.compose.runtime.remember\cb1 \
-\cb2 import androidx.compose.runtime.setValue\cb1 \
-\cb2 import androidx.compose.ui.Alignment\cb1 \
-\cb2 import androidx.compose.ui.Modifier\cb1 \
-\cb2 import androidx.compose.ui.platform.
-\f1\i \cb2 \strokec3 LocalContext\cb1 \strokec3 \
+@Composable
+fun SimpleExpilicit(){
+    val context = LocalContext.current
 
-\f0\i0 \cb2 \strokec3 import androidx.compose.ui.tooling.preview.Preview\cb1 \
-\cb2 import androidx.compose.ui.unit.dp\cb1 \
-\cb2 import com.example.explicitintent.ui.theme.ExplicitintentTheme\cb1 \
-\
-\cb2 class MainActivity : ComponentActivity() \{\cb1 \
-\cb2  \'a0 \'a0override fun onCreate(savedInstanceState: Bundle?) \{\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0super.onCreate(savedInstanceState)\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0
-\f1\i \cb2 \strokec3 enableEdgeToEdge
-\f0\i0 \cb2 \strokec3 ()\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0
-\f1\i \cb2 \strokec3 setContent 
-\f2\i0\b \{\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f0\b0 \cb2 \strokec3 SimpleExpilicit()\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2  \'a0 \'a0 \'a0 \'a0
-\f2\b \cb2 \strokec3 \}\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0
-\f0\b0 \cb2 \strokec3 \}\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \}\cb1 \
-\
-\cb2 @Composable\cb1 \
-\cb2 fun SimpleExpilicit()\{\cb1 \
-\cb2  \'a0 \'a0val context = 
-\f1\i \cb2 \strokec3 LocalContext
-\f0\i0 \cb2 \strokec3 .current\cb1 \
-\
-\cb2  \'a0 \'a0var uname by remember 
-\f2\b \cb2 \strokec3 \{ 
-\f1\i\b0 mutableStateOf
-\f0\i0 \cb2 \strokec3 ("") 
-\f2\b \cb2 \strokec3 \}\cb1 \strokec3 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0
-\f0\b0 \cb2 \strokec3 Column(modifier = Modifier.
-\f1\i \cb2 \strokec3 fillMaxSize
-\f0\i0 \cb2 \strokec3 (), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) 
-\f2\b \cb2 \strokec3 \{\cb1 \strokec3 \
-\cb2 \strokec3  \'a0 \'a0 \'a0 \'a0
-\f0\b0 \cb2 \strokec3 OutlinedTextField(\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0value = uname,\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0onValueChange = 
-\f2\b \cb2 \strokec3 \{
-\f0\b0 \cb2 \strokec3 uname=
-\f2\b \cb2 \strokec3 it\}
-\f0\b0 \cb2 \strokec3 ,\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0label = 
-\f2\b \cb2 \strokec3 \{ 
-\f0\b0 \cb2 \strokec3 Text("Enter your Name") 
-\f2\b \cb2 \strokec3 \}\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0 \'a0 \'a0
-\f0\b0 \cb2 \strokec3 )\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2  \'a0 \'a0 \'a0 \'a0Spacer(modifier = Modifier.
-\f1\i \cb2 \strokec3 height
-\f0\i0 \cb2 \strokec3 (20.
-\f1\i \cb2 \strokec3 dp
-\f0\i0 \cb2 \strokec3 ))\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0Button(onClick = 
-\f2\b \cb2 \strokec3 \{\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f0\b0 \cb2 \strokec3 val intent = Intent(context, SecondActivity::class.
-\f1\i \cb2 \strokec3 java
-\f0\i0 \cb2 \strokec3 ).
-\f1\i \cb2 \strokec3 apply 
-\f2\i0\b \{\cb1 \strokec3 \
-\cb2 \strokec3  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f0\b0 \cb2 \strokec3 putExtra("user_name",uname)\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f2\b \cb2 \strokec3 \}\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f0\b0 \cb2 \strokec3 context.startActivity(intent)\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2  \'a0 \'a0 \'a0 \'a0
-\f2\b \cb2 \strokec3 \}
-\f0\b0 \cb2 \strokec3 ) 
-\f2\b \cb2 \strokec3 \{ 
-\f0\b0 \cb2 \strokec3 Text("Send to SecondActivity") 
-\f2\b \cb2 \strokec3 \}\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0\}\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
+    var uname by remember { mutableStateOf("") }
 
-\f0\b0 \cf0 \cb2 \strokec3 \}\cb1 \
-\
-\cb2 SecondActivity.kt\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 package com.example.explicitintent\cb1 \
-\
-\cb2 import android.content.Intent\cb1 \
-\cb2 import android.os.Bundle\cb1 \
-\cb2 import androidx.activity.ComponentActivity\cb1 \
-\cb2 import androidx.activity.compose.setContent\cb1 \
-\cb2 import androidx.activity.enableEdgeToEdge\cb1 \
-\cb2 import androidx.compose.foundation.layout.Arrangement\cb1 \
-\cb2 import androidx.compose.foundation.layout.Column\cb1 \
-\cb2 import androidx.compose.foundation.layout.Spacer\cb1 \
-\cb2 import androidx.compose.foundation.layout.fillMaxSize\cb1 \
-\cb2 import androidx.compose.foundation.layout.height\cb1 \
-\cb2 import androidx.compose.foundation.layout.padding\cb1 \
-\cb2 import androidx.compose.material3.Button\cb1 \
-\cb2 import androidx.compose.material3.OutlinedTextField\cb1 \
-\cb2 import androidx.compose.material3.Scaffold\cb1 \
-\cb2 import androidx.compose.material3.Text\cb1 \
-\cb2 import androidx.compose.runtime.Composable\cb1 \
-\cb2 import androidx.compose.runtime.getValue\cb1 \
-\cb2 import androidx.compose.runtime.mutableStateOf\cb1 \
-\cb2 import androidx.compose.runtime.remember\cb1 \
-\cb2 import androidx.compose.runtime.setValue\cb1 \
-\cb2 import androidx.compose.ui.Alignment\cb1 \
-\cb2 import androidx.compose.ui.Modifier\cb1 \
-\cb2 import androidx.compose.ui.graphics.Color\cb1 \
-\cb2 import androidx.compose.ui.platform.
-\f1\i \cb2 \strokec3 LocalContext\cb1 \strokec3 \
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+        OutlinedTextField(
+            value = uname,
+            onValueChange = {uname=it},
+            label = { Text("Enter your Name") }
+        )
+        Spacer(modifier = Modifier.height(20.dp))
+        Button(onClick = {
+            val intent = Intent(context, SecondActivity::class.java).apply {
+                putExtra("user_name",uname)
+            }
+            context.startActivity(intent)
+        }) { Text("Send to SecondActivity") }
+    }
+}
 
-\f0\i0 \cb2 \strokec3 import androidx.compose.ui.tooling.preview.Preview\cb1 \
-\cb2 import androidx.compose.ui.unit.dp\cb1 \
-\cb2 import androidx.compose.ui.unit.sp\cb1 \
-\cb2 import com.example.explicitintent.ui.theme.ExplicitintentTheme\cb1 \
-\
-\cb2 class SecondActivity : ComponentActivity() \{\cb1 \
-\cb2  \'a0 \'a0override fun onCreate(savedInstanceState: Bundle?) \{\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0super.onCreate(savedInstanceState)\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0
-\f1\i \cb2 \strokec3 enableEdgeToEdge
-\f0\i0 \cb2 \strokec3 ()\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0
-\f1\i \cb2 \strokec3 setContent 
-\f2\i0\b \{\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f0\b0 \cb2 \strokec3 val myname = 
-\f1\i \cb2 \strokec3 intent
-\f0\i0 \cb2 \strokec3 .getStringExtra("user_name")?:"unkown"\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2  \'a0 \'a0 \'a0 \'a0 \'a0 \'a0DisplayName(myname)\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0
-\f2\b \cb2 \strokec3 \}\cb1 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \strokec3  \'a0 \'a0
-\f0\b0 \cb2 \strokec3 \}\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb2 \}\cb1 \
-\
-\cb2 @Composable\cb1 \
-\cb2 fun DisplayName(myname: String)\{\cb1 \
-\cb2  \'a0 \'a0Column(\cb1 \
-\cb2  \'a0 \'a0 \'a0 \'a0modifier = Modifier.
-\f1\i \cb2 \strokec3 fillMaxSize
-\f0\i0 \cb2 \strokec3 (), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally\cb1 \
-\cb2  \'a0 \'a0)
-\f2\b \cb2 \strokec3 \{ 
-\f0\b0 \cb2 \strokec3 Text("Welcome $\{myname\}", fontSize = 40.
-\f1\i \cb2 \strokec3 sp
-\f0\i0 \cb2 \strokec3 , color = Color.Red) 
-\f2\b \cb2 \strokec3 \}\cb1 \strokec3 \
+SecondActivity.kt
 
-\f0\b0 \cb2 \strokec3 \}\cb1 \
+package com.example.explicitintent
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.explicitintent.ui.theme.ExplicitintentTheme
+
+class SecondActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            val myname = intent.getStringExtra("user_name")?:"unkown"
+            DisplayName(myname)
+        }
+    }
+}
+
+@Composable
+fun DisplayName(myname: String){
+    Column(
+        modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
+    ){ Text("Welcome ${myname}", fontSize = 40.sp, color = Color.Red) }
 }
