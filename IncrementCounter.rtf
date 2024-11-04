@@ -1,110 +1,58 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2757
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;\f2\fswiss\fcharset0 Helvetica-Bold;
-}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh17840\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+package com.example.incrementcounter
 
-\f0\fs32 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 package com.example.incrementcounter\
-\
-import android.os.Bundle\
-import androidx.activity.ComponentActivity\
-import androidx.activity.compose.setContent\
-import androidx.activity.enableEdgeToEdge\
-import androidx.compose.foundation.layout.Arrangement\
-import androidx.compose.foundation.layout.Column\
-import androidx.compose.foundation.layout.Spacer\
-import androidx.compose.foundation.layout.fillMaxSize\
-import androidx.compose.foundation.layout.height\
-import androidx.compose.foundation.layout.padding\
-import androidx.compose.material3.Button\
-import androidx.compose.material3.Scaffold\
-import androidx.compose.material3.Text\
-import androidx.compose.material3.TextField\
-import androidx.compose.runtime.Composable\
-import androidx.compose.runtime.getValue\
-import androidx.compose.runtime.mutableStateOf\
-import androidx.compose.runtime.remember\
-import androidx.compose.runtime.setValue\
-import androidx.compose.ui.Alignment\
-import androidx.compose.ui.Modifier\
-import androidx.compose.ui.tooling.preview.Preview\
-import androidx.compose.ui.unit.dp\
-import com.example.incrementcounter.ui.theme.IncrementcounterTheme\
-\
-class MainActivity : ComponentActivity() \{\
- \'a0 \'a0override fun onCreate(savedInstanceState: Bundle?) \{\
- \'a0 \'a0 \'a0 \'a0super.onCreate(savedInstanceState)\
- \'a0 \'a0 \'a0 \'a0
-\f1\i \strokec2 enableEdgeToEdge
-\f0\i0 \strokec2 ()\
- \'a0 \'a0 \'a0 \'a0
-\f1\i \strokec2 setContent 
-\f2\i0\b \{\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f0\b0 \strokec2 IncrementCounter()\
- \'a0 \'a0 \'a0 \'a0
-\f2\b \strokec2 \}\
- \'a0 \'a0
-\f0\b0 \strokec2 \}\
-\}\
-\
-@Composable\
-fun IncrementCounter()\{\
- \'a0 \'a0var number by remember 
-\f2\b \strokec2 \{ 
-\f1\i\b0 mutableStateOf
-\f0\i0 \strokec2 ("") 
-\f2\b \strokec2 \}\
- \'a0 \'a0
-\f0\b0 \strokec2 Column(modifier = Modifier.
-\f1\i \strokec2 fillMaxSize
-\f0\i0 \strokec2 (), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) 
-\f2\b \strokec2 \{\
- \'a0 \'a0 \'a0 \'a0
-\f0\b0 \strokec2 TextField(\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0value = number,\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0onValueChange = 
-\f2\b \strokec2 \{ 
-\f0\b0 \strokec2 number = 
-\f2\b \strokec2 it \}
-\f0\b0 \strokec2 ,\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0label = 
-\f2\b \strokec2 \{ 
-\f0\b0 \strokec2 Text("Enter the number") 
-\f2\b \strokec2 \}\
- \'a0 \'a0 \'a0 \'a0
-\f0\b0 \strokec2 )\
- \'a0 \'a0 \'a0 \'a0Spacer(modifier = Modifier.
-\f1\i \strokec2 height
-\f0\i0 \strokec2 (20.
-\f1\i \strokec2 dp
-\f0\i0 \strokec2 ))\
- \'a0 \'a0 \'a0 \'a0Button(onClick = 
-\f2\b \strokec2 \{\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0
-\f0\b0 \strokec2 number = if(number.
-\f1\i \strokec2 isNotEmpty
-\f0\i0 \strokec2 ())\{\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0(number.
-\f1\i \strokec2 toInt
-\f0\i0 \strokec2 ()+1).toString()\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\}\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0else\{\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0"1"\
- \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\}\
- \'a0 \'a0 \'a0 \'a0
-\f2\b \strokec2 \}
-\f0\b0 \strokec2 ) 
-\f2\b \strokec2 \{ 
-\f0\b0 \strokec2 Text("Increment") 
-\f2\b \strokec2 \}\
- \'a0 \'a0\}\
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.example.incrementcounter.ui.theme.IncrementcounterTheme
 
-\f0\b0 \strokec2 \}\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 \
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            IncrementCounter()
+        }
+    }
 }
+
+@Composable
+fun IncrementCounter(){
+    var number by remember { mutableStateOf("") }
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+        TextField(
+            value = number,
+            onValueChange = { number = it },
+            label = { Text("Enter the number") }
+        )
+        Spacer(modifier = Modifier.height(20.dp))
+        Button(onClick = {
+            number = if(number.isNotEmpty()){
+                (number.toInt()+1).toString()
+            }
+            else{
+                "1"
+            }
+        }) { Text("Increment") }
+    }
+}
+
